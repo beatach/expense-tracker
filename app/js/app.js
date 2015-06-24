@@ -1,15 +1,21 @@
 'use strict'; 
 var myApp = angular.module('myApp',[
-	'ui.router',
-	'ngMaterial'
+	'ngRoute',
+	'ngMaterial', 
+	'SummaryController'
 	]);
 
-myApp.config(function($stateProvider, $urlRouterProvider){
-	$urlRouterProvider.otherwise('/home');
-	$stateProvider
-		.state('home', {
-			url: '/home',
-			templateUrl: 'views/summary.html'
-		});
-})
+myApp.config(['$routeProvider',function($routeProvider){
+	$routeProvider.
+	when('/summary', {
+		templateUrl: 'views/summary.html',
+		controller: 'SummaryController'
+	}).
+	otherwise({
+		redirectTo: '/summary'
+	});
+}])
 
+myApp.controller('SummaryController', function(){
+	console.log("SummaryController called"); 
+})

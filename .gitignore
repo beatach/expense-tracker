@@ -1,0 +1,5 @@
+bower_components
+.idea
+expense-tracker.iml
+*.log
+node_modules
