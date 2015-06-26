@@ -1,3 +1,26 @@
-<div>
-  <p>In the summary</p>
-</div>
+<md-toolbar layout="row" layout-padding layout-align="center">
+		<div flex="80" layout="row" layout-align="center">
+			<h2>
+				Expense details
+			</h2>
+		</div flex>
+		<div flex="20" layout="column" layout-align="center">
+			<md-button class="md-fab md-mini" aria-label="FAB">
+				<md-icon md-svg-icon="img/library-plus.svg"/>
+			</md-button>
+		</div>
+	</md-toolbar>
+<md-content>
+	<md-list>
+		<md-list-item ng-repeat="item in expList">
+			<div layout="row" layout-padding>
+				<div flex>
+					<h4>{{item.label}}</h4>
+				</div>
+				<div flex>
+					<h4>{{item.total}}</h4>
+			</div>
+		
+		</md-list-item>
+	</md-list>
+</md-content>
