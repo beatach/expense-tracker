@@ -9,10 +9,10 @@ controllersModule.controller('ListController', ['$scope', '$mdDialog', function(
 		{"category": "gifts", "label":"Gifts", "total":45.99}
 	];
 
-	$scope.addItem = function(bucket, event){
+	$scope.showAddDialog = function(bucket, event){
 		$mdDialog.show({
-			controller: AddController,
-			templateUrl: 'addItem.html',
+		//	controller: AddController,
+			templateUrl: 'views/addItem.html',
 			parent: angular.element(document.body),
 			targetEvent: event
 		});
@@ -20,13 +20,12 @@ controllersModule.controller('ListController', ['$scope', '$mdDialog', function(
 }]);
 
 function AddController($scope, $mdDialog){
-	$scope.hide = function(){
+	$scope.addItem = function(){
+		console.log("Adding item"); 
 		$mdDialog.hide();
 	};
 	$scope.cancel = function(){
 		$mdDialog.cancel();
 	};
-	$scope.answer = function(){
-		$mdDialog.hide(answer); 
-	};
+	
 }
