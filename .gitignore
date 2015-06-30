@@ -3,3 +3,4 @@ bower_components
 expense-tracker.iml
 *.log
 node_modules
+app/.DS_Store

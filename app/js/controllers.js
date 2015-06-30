@@ -11,7 +11,7 @@ controllersModule.controller('ListController', ['$scope', '$mdDialog', function(
 
 	$scope.showAddDialog = function(bucket, event){
 		$mdDialog.show({
-		//	controller: AddController,
+			controller: AddController,
 			templateUrl: 'views/addItem.html',
 			parent: angular.element(document.body),
 			targetEvent: event
@@ -22,10 +22,10 @@ controllersModule.controller('ListController', ['$scope', '$mdDialog', function(
 function AddController($scope, $mdDialog){
 	$scope.addItem = function(){
 		console.log("Adding item"); 
-		$mdDialog.hide();
+		$mdDialog.hide()
 	};
 	$scope.cancel = function(){
-		$mdDialog.cancel();
+		$mdDialog.hide();
 	};
 	
 }
